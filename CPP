@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Bank {
+public:
+    string name;
+    int accNo;
+    float balance;
+
+    void createAccount() {
+        cout << "Enter Name: ";
+        cin >> name;
+        cout << "Enter Account Number: ";
+        cin >> accNo;
+        cout << "Enter Initial Balance: ";
+        cin >> balance;
+        cout << "Account Created Successfully!\n";
+    }
+
+    void deposit() {
+        float amt;
+        cout << "Enter amount to deposit: ";
+        cin >> amt;
+        balance += amt;
+        cout << "Amount Deposited!\n";
+    }
+
+    void display() {
+        cout << "\nName: " << name << endl;
+        cout << "Account No: " << accNo << endl;
+        cout << "Balance: " << balance << endl;
+    }
+};
+
+int main() {
+    Bank b;
+
+    b.createAccount();   // create account
+    b.deposit();         // deposit money
+    b.display();         // show details
+
+    return 0;
+}
